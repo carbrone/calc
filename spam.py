@@ -77,4 +77,4 @@ def staircasespam():
         time.sleep(0.75)
 
 staircasespam()
-#regularspam()
+regularspam()
