@@ -6,19 +6,22 @@ import numpy as np
 
 color = (165, 165, 165)
 
-py.displayMousePosition()
-
+fish = r"C:\Users\carso\OneDrive\Documents\GitHub\calc\fishy\nobgfisb.png"
 
 def findfish():
-    fesh = py.locateOnScreen("thefishy.png", confidence=0.8)
-    if fesh is not None:
-        print("found")
-        x, y = py.center(fesh)
+    try:
+        fesh = py.locateOnScreen(fish, confidence=0.8)
+        x,y = py.center(fesh)
         print(x, y)
         return x, y
-    else:
-        print("not found")
-        return False
+    except py.ImageNotFoundException:
+        print("couldnt find fish")
+
+
+
+
+
+
 
 def goon():
     fihtime = py.prompt("how many clicks")
@@ -41,5 +44,6 @@ def goon():
             print("fish not found")
 
         time.sleep(0.25)
-    
+
+
 goon()
