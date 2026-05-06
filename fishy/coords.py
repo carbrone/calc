@@ -2,11 +2,14 @@ import pyautogui as py
 import time
 import keyboard
 import ctypes
-ctypes.windll.shcore.SetProcessDpiAwareness(2)
-#for i in range(4):
- #   keyboard.wait("z")
-  #  x, y = py.position()
-   # print(x, y)
+
+print("starting")
+for i in range(5):
+    keyboard.wait("z")
+    x, y = py.position()
+    color = py.pixel(x, y)
+    print(color)
+    print(x, y)
 
 topX = 724 
 topY = 288
